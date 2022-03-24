@@ -13,29 +13,27 @@
 - profileImage, autherLabel, timeLabel 한 스택뷰에 있는 경우에 width이 모호하므로 autherLabel HuggingPriority 최상으로 설정
 
 ```Swift 
-        profileImageView = UIImageView()
-        profileImageView.clipsToBounds = true
-        profileImageView.contentMode = .scaleAspectFit
+ profileImageView = UIImageView()
+ profileImageView.clipsToBounds = true
+ profileImageView.contentMode = .scaleAspectFit
         
-        authorLabel = UILabel()
-        authorLabel.adjustsFontForContentSizeCategory = true
-        authorLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
-        authorLabel.textColor = .black
-        authorLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
-        authorLabel.setContentCompressionResistancePriority(.required, for: .vertical)
-        authorLabel.setContentHuggingPriority(.required, for: .horizontal)
+ authorLabel = UILabel()
+ authorLabel.adjustsFontForContentSizeCategory = true
+ authorLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
+ authorLabel.textColor = .black
+ authorLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
+ authorLabel.setContentCompressionResistancePriority(.required, for: .vertical)
+ authorLabel.setContentHuggingPriority(.required, for: .horizontal)
         
+ timeLabel = UILabel()
+ timeLabel.adjustsFontForContentSizeCategory = true
+ timeLabel.font = UIFont.preferredFont(forTextStyle: .caption2)
+ timeLabel.textColor = .darkGray
+ timeLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+ timeLabel.setContentCompressionResistancePriority(.required, for: .vertical)
         
-        timeLabel = UILabel()
-        timeLabel.adjustsFontForContentSizeCategory = true
-        timeLabel.font = UIFont.preferredFont(forTextStyle: .caption2)
-        timeLabel.textColor = .darkGray
-        timeLabel.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
-        timeLabel.setContentCompressionResistancePriority(.required, for: .vertical)
-        
-        
-        let profileStack = UIStackView(arrangedSubviews: [profileImageView, authorLabel, timeLabel])
-        profileStack.axis = .horizontal
-        profileStack.spacing = UIStackView.spacingUseSystem
+ let profileStack = UIStackView(arrangedSubviews: [profileImageView, authorLabel, timeLabel])
+ profileStack.axis = .horizontal
+ profileStack.spacing = UIStackView.spacingUseSystem
 
 ```
